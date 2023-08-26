@@ -369,15 +369,15 @@ function createFormattedString(dropdowns, freeText) {
   
   if (freeText.trim() !== "") {
     selections.push(freeText); // Include the <textarea> value if not empty
-  }
-
-  if (freeText.trim() !== "")
-  {
     selections.pop();
   }
+
+  
   
   return selections.join(" - ");
 }
+
+
 
 
 
