@@ -366,12 +366,14 @@ function populateDropdown(dropdown, options) {
 // Helper function to create a formatted string from dropdown selections
 function createFormattedString(dropdowns, freeText) {
   const selections = dropdowns.map(dropdown => dropdown.value).filter(value => value !== "");
+  
   if (freeText.trim() !== "") {
     selections.push(freeText); // Include the <textarea> value if not empty
   }
-  
-  if (selections.length > 1) {
-    selections.pop(); // Remove the last item (the free text)
+
+  if (freeText.trim() !== "")
+  {
+    selections.pop();
   }
   
   return selections.join(" - ");
