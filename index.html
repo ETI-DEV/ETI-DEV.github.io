@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Naming Convention App</title>
+</head>
+<body>
+  <h1>Naming Convention</h1>
+  <div class="options">
+    <button class="button" id="facebookBtn">Facebook Ads</button>
+    <button class="button" id="googleBtn">Google Ads</button>
+  </div>
+  <div class="questions" id="questionsContainer">
+    <div id="facebookQuestions" class="hidden">
+      <h2 id="campaignTitle">Social campaign name</h2>
+      <p class="FacebookHide">Agency:</p>
+      <select id="campaignDropdown1"></select>
+      <p class="FacebookHide">Platform:</p>
+      <select id="campaignDropdown2"></select>
+      <p class="FacebookHide">Funnel:</p>
+      <select id="campaignDropdown3"></select>
+      <p class="FacebookHide">Market:</p>
+      <select id="campaignDropdown4"></select>
+      <p class="FacebookHide">Language:</p>
+      <select id="campaignDropdown5"></select>
+      <p class="FacebookHide">Objective:</p>
+      <select id="campaignDropdown6"></select>
+      <p class="FacebookHide">Optimization:</p>
+      <select id="campaignDropdown7"></select>
+      <p class="FacebookHide">Nom du poste, emploi:</p>
+      <textarea class="FacebookHide" id="campaignFreeText1" placeholder="Type your text here..."></textarea>
+      <div id="campaignResult"></div>
+      <button class="button" id="copyCampaignButton">Copy</button>
+
+      <h2 id="adSetTitle">Social ad set name</h2>
+      <p class="FacebookHide">Audience Type:</p>
+      <select id="adSetDropdown1"></select>
+      <p class="FacebookHide">Audience Description:</p>
+      <textarea class="FacebookHide" id="adSetDropdown2" placeholder="Type your text here..."></textarea>
+      <p class="FacebookHide">Language:</p>
+      <select id="adSetDropdown3"></select>
+      <p class="FacebookHide">Placement:</p>
+      <select id="adSetDropdown4"></select>
+      <div id="adSetResult"></div>
+      <button class="button" id="copyAdSetButton">Copy</button>
+
+      <h2 id="adNameTitle">Social ad name</h2>
+      <p class="FacebookHide">Funnel:</p>
+      <select id="adNameDropdown1"></select>
+      <p class="FacebookHide">Ad Name:</p>
+      <textarea class="FacebookHide" id="adNameDropdown2" placeholder="Type your text here..."></textarea>
+      <p class="FacebookHide">Asset Type:</p>
+      <select id="adNameDropdown3"></select>
+      <p class="FacebookHide">CTA:</p>
+      <select id="adNameDropdown4"></select>
+      <p class="FacebookHide">Date:</p>
+      <select id="adNameDropdown5"></select>
+      <div id="adNameResult"></div>
+      <button class="button" id="copyAdNameButton">Copy</button>
+    </div>
+    <div id="googleQuestions" class="hidden">
+        <div class="GoogleHide" id="googleQuestions" class="hidden">
+            <h2 class="GoogleHide" id="GcampaignTitle">Social campaign name</h2>
+            <p class="GoogleHide">Agency:</p>
+            <select class="GoogleHide" id="GcampaignDropdown1"></select>
+            <p class="GoogleHide">Platform:</p>
+            <select class="GoogleHide" id="GcampaignDropdown2"></select>
+            <p class="GoogleHide">Funnel:</p>
+            <select class="GoogleHide" id="GcampaignDropdown3"></select>
+            <p class="GoogleHide">Objective:</p>
+            <select class="GoogleHide" id="GcampaignDropdown4"></select>
+            <p class="GoogleHide">Market:</p>
+            <select class="GoogleHide" id="GcampaignDropdown5"></select>
+            <p class="GoogleHide">Language:</p>
+            <select class="GoogleHide" id="GcampaignDropdown6"></select>
+            <p class="GoogleHide">Campaign Type:</p>
+            <select class="GoogleHide" id="GcampaignDropdown7"></select>
+            <p class="GoogleHide">Nom du poste, emploi:</p>
+            <textarea class="GoogleHide" id="GcampaignFreeText1" placeholder="Type your text here..."></textarea>
+            <div class="GoogleHide" id="GcampaignResult"></div>
+            <button class="button" id="GcopyCampaignButton">Copy</button>
+    </div>
+  </div>
+  <br>
+  <script src="script.js"></script>
+  <style>
+  /* Reset some default styles */
+body, h1, h2, p, button, select {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: Arial, sans-serif;
+}
+
+/* Body background and text colors */
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0 50px; /* Add margin to the sides */
+}
+
+
+/* Header styles */
+h1 {
+  text-align: center;
+  padding: 20px 0;
+  color: #333;
+}
+
+/* Buttons container */
+.options {
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Buttons */
+.button {
+  background-color: #FFD700;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  display: inline-block;
+  width: fit-content;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+  background-color: #FFC800;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdowns, result and copy buttons */
+select, .result, .copy-button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #FFF;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Section titles */
+h2 {
+  margin: 20px 0;
+  color: #333;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+textarea.FacebookHide,
+textarea.GoogleHide {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #FFF;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+/* Style for freetype label */
+label.FreetypeLabel {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #777;
+}
+
+#campaignFreeText {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #FFF;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+/* Hide elements with the FacebookHide class */
+.FacebookHide {
+  display: none;
+}
+
+/* Show FacebookHide elements when needed */
+#facebookQuestions:not(.hidden) .FacebookHide {
+  display: block;
+}
+
+  </style>
+</body>
+</html>
+
+
+
